@@ -1,7 +1,7 @@
-Wordpress workflow using composer and grunt
+Wordpress workflow
 ====================
 
-
+Wordpress workflow using composer and grunt
 
 
 
