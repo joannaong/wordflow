@@ -1,4 +1,4 @@
-# BASE WP
+# Wordpress Workflow
 
 Wordpress workflow using composer and grunt
 
@@ -41,12 +41,6 @@ define('DB_PASSWORD', '*************');
 
 /** MySQL hostname */
 define('DB_HOST', 'localhost');
-
-/** Database Charset to use in creating database tables. */
-define('DB_CHARSET', 'utf8');
-
-/** The Database Collate type. Don't change this if in doubt. */
-define('DB_COLLATE', '');
 ```
 
 
@@ -72,9 +66,9 @@ PROJECT/
 
 
 ## Reference
-- Tutorials: 
-	* http://polycademy.com/blog/id/148/modern_wordpress_workflow_with_composer
-	* http://roots.io/using-composer-with-wordpress/
-- Wordpress plugin list:
-	* http://wpackagist.org/
-	* http://plugins.svn.wordpress.org/
+Tutorials: 
+	- http://polycademy.com/blog/id/148/modern_wordpress_workflow_with_composer
+	- http://roots.io/using-composer-with-wordpress/
+Wordpress plugin list:
+	- http://wpackagist.org/
+	- http://plugins.svn.wordpress.org/
