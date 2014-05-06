@@ -11,19 +11,32 @@ module.exports = function(grunt) {
     copy:{
     	wpConfig: {
 		    src: 'src/wp-config.php',
-		    dest: 'wp/wp-config.php',
+		    dest: 'wp/wp-config.php'
 		  },
 		  wpPlugins: {
-		    src: 'src/plugins/',
-		    dest: 'wp/wp-content/plugins/',
+		  	expand: true,
+		  	cwd: 'src/plugins/',
+				src: ['**'],
+		    dest: 'wp/wp-content/plugins/'
+		  },
+		  wpThemes: {
+		  	expand: true,
+		  	cwd: 'src/themes/',
+				src: ['**'],
+		    dest: 'wp/wp-content/themes/'
 		  }
-    }
+    },
+
+    watch: {
+		  copy: {
+		    files: ['src/'],
+		    tasks: ['copy']
+		  }
+		}
 
   });
 
   // Default task(s).
-  grunt.registerTask('default', ["copy"]);
+  grunt.registerTask('default', ["copy", "watch"]);
 
 };
-
-
