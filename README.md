@@ -53,15 +53,15 @@ define('DB_COLLATE', '');
 ## Structure
 ```
 PROJECT/
-	|_ composer.json # list of php dependencies (composer packages)
-	|_ composer.lock # lock file auto_produced when running 'composer install'
-	|_ Gruntfile.js # Grunt tasks
-	|_ node_modules/ # list of npm dependencies used in Grunt (git ignored)
-	|_ package.json # grunt packages
+	|_ composer.json     # list of php dependencies (composer packages)
+	|_ composer.lock     # lock file auto_produced when running 'composer install'
+	|_ Gruntfile.js      # Grunt tasks
+	|_ node_modules/     # list of npm dependencies used in Grunt (git ignored)
+	|_ package.json      # grunt packages
 	|_ README.md
-	|_ src/ # source code (themes and/or plugins)
-	|_ vendor/ # composer dependencies (git ignored)
-	|_ wp/ # wordpress (git ignored)
+	|_ src/              # source code (themes and/or plugins)
+	|_ vendor/           # composer dependencies (git ignored)
+	|_ wp/               # wordpress (git ignored)
 ```
 
 - Wordpress and all dependent plugins / themes are installed as dependencies.
