@@ -1,0 +1,46 @@
+{
+	"name": "visi-cons",
+  "description": "Themes and plugins for our wordpress install.",
+  "authors": [
+    {
+      "name": "Joanna Ong",
+      "email": "jo@thesecretlocation.com"
+    }
+  ],
+	"repositories": [
+		{
+			"type": "package",
+			"package": {
+				"name": "wordpress",
+				"type": "webroot",
+				"version": "3.9",
+				"dist": {
+					"type": "zip",
+					"url": "https://github.com/WordPress/WordPress/archive/3.9.zip"
+				},
+				"require": {
+					"fancyguy/webroot-installer": "1.0.0"
+				}
+			}
+		},
+		{
+      "type":"composer",
+      "url":"http://wpackagist.org"
+    }
+	],
+	"require":{
+		"php": ">=5.3.0",
+		"wordpress": "3.9",
+		"wpackagist-plugin/json-api":"1.1.1",
+		"wpackagist-plugin/advanced-custom-fields": "4.3.8",
+		"wpackagist-plugin/amazon-s3-and-cloudfront": "0.6.1",
+		"wpackagist-plugin/amazon-web-services": "0.1"
+	},
+	"extra": {
+		"webroot-dir": "wp",
+		"webroot-package": "wordpress",
+		"installer-paths": {
+      "wp/wp-content/plugins/{$name}/": ["type:wordpress-plugin"]
+    }
+	}
+}
