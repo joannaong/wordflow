@@ -1,35 +1,50 @@
-# Wordpress Workflow
+Conspiracy show CMS
+====================
 
 Wordpress workflow using composer and grunt
 
 
-## Requirements
+
+
+
+
+Requirements
+---------------------
 Install Composer: https://getcomposer.org/doc/00-intro.md
-```
+
+```bash
 curl -sS https://getcomposer.org/installer | php
 ```
+
 Install NPM
-```
+
+```bash
 curl http://npmjs.org/install.sh | sh
 ```
 
 
-## Usage (terminal)
 
-run 'composer install' to install php dependencies including wordpress
-```
+
+
+
+Usage
+---------------------
+
+run 'composer install' in terminal to install php dependencies including wordpress
+
+```bash
 composer install
 ```
-run 'npm install' to install node_modules
-```
+
+run 'npm install' in terminal to install node_modules/
+
+```bash
 npm install
 ```
-run 'grunt' to build
-```
-grunt
-```
+
 Setup your database table and fill in src/wp-config.php
-```
+
+```php
 /** The name of the database for WordPress */
 define('DB_NAME', '*************');
 
@@ -43,8 +58,27 @@ define('DB_PASSWORD', '*************');
 define('DB_HOST', 'localhost');
 ```
 
+Setup your aws credentials (if applicable) src/wp-config.php
 
-## Structure
+```php
+define('AWS_ACCESS_KEY_ID', '*************');
+define('AWS_SECRET_ACCESS_KEY', '*************');
+```
+
+run 'grunt' to build
+
+```bash
+grunt
+```
+
+
+
+
+
+
+Structure
+---------------------
+
 ```
 PROJECT/
 	|_ composer.json     # list of php dependencies (composer packages)
@@ -58,14 +92,18 @@ PROJECT/
 	|_ wp/               # wordpress (git ignored)
 ```
 
-- Wordpress and all dependent plugins / themes are installed as dependencies.
+- Wordpress and all dependent plugins / themes are installed
 - Wordpress is installed under the wp/ directory
 - src/wp-config.php is then copied over to wp/wp-config.php
 - src/plugins are copied over to wp/wp-content/plugins
 
 
 
-## Reference
+
+
+
+Reference
+---------------------
 Tutorials: 
 	- http://polycademy.com/blog/id/148/modern_wordpress_workflow_with_composer
 	- http://roots.io/using-composer-with-wordpress/
