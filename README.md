@@ -1,42 +1,67 @@
-# base wp
+# BASE WP
 
 Wordpress workflow using composer and grunt
 
 
 ## Requirements
-- Install Composer: https://getcomposer.org/doc/00-intro.md
+Install Composer: https://getcomposer.org/doc/00-intro.md
 ```
 curl -sS https://getcomposer.org/installer | php
 ```
-- Install NPM
+Install NPM
 ```
 curl http://npmjs.org/install.sh | sh
 ```
 
 
 ## Usage (terminal)
+
+run 'composer install' to install php dependencies including wordpress
 ```
 composer install
+```
+run 'npm install' to install node_modules
+```
 npm install
+```
+run 'grunt' to build
+```
 grunt
 ```
-- run 'composer install' to install php dependencies including wordpress
-- run 'npm install' to install node_modules
-- run 'grunt' to build
+Setup your database table and fill in src/wp-config.php
+```
+/** The name of the database for WordPress */
+define('DB_NAME', '*************');
+
+/** MySQL database username */
+define('DB_USER', '*************');
+
+/** MySQL database password */
+define('DB_PASSWORD', '*************');
+
+/** MySQL hostname */
+define('DB_HOST', 'localhost');
+
+/** Database Charset to use in creating database tables. */
+define('DB_CHARSET', 'utf8');
+
+/** The Database Collate type. Don't change this if in doubt. */
+define('DB_COLLATE', '');
+```
 
 
 ## Structure
 ```
-PROJECT
-|-- composer.json # list of php dependencies (composer packages)
-|-- composer.lock # lock file auto-produced when running 'composer install'
-|-- Gruntfile.js 	# Grunt tasks
-|-- node_modules  # list of npm dependencies used in Grunt (git ignored)
-|-- package.json 	# grunt packages
-|-- README.md
-|-- src 					# source code (themes and/or plugins)
-|-- vendor				# composer dependencies (git ignored)
-|-- wp 						# wordpress (git ignored)
+PROJECT/
+|_ composer.json # list of php dependencies (composer packages)
+|_ composer.lock # lock file auto_produced when running 'composer install'
+|_ Gruntfile.js # Grunt tasks
+|_ node_modules # list of npm dependencies used in Grunt (git ignored)
+|_ package.json # grunt packages
+|_ README.md
+|_ src # source code (themes and/or plugins)
+|_ vendor # composer dependencies (git ignored)
+|_ wp # wordpress (git ignored)
 ```
 
 - Wordpress and all dependent plugins / themes are installed as dependencies.
@@ -48,9 +73,9 @@ PROJECT
 
 ## Reference
 - Tutorials:
--- http://polycademy.com/blog/id/148/modern_wordpress_workflow_with_composer
--- http://roots.io/using-composer-with-wordpress/
+> http://polycademy.com/blog/id/148/modern_wordpress_workflow_with_composer
+> http://roots.io/using-composer-with-wordpress/
 
 - Wordpress plugin list:
--- http://wpackagist.org/
--- http://plugins.svn.wordpress.org/
+> http://wpackagist.org/
+> http://plugins.svn.wordpress.org/
