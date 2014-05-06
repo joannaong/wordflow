@@ -1,7 +1,5 @@
-Conspiracy show CMS
-====================
-
 Wordpress workflow using composer and grunt
+====================
 
 
 
