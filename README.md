@@ -1,9 +1,7 @@
-Conspiracy show CMS
+Wordpress workflow
 ====================
 
 Wordpress workflow using composer and grunt
-
-
 
 
 
@@ -105,8 +103,9 @@ PROJECT/
 Reference
 ---------------------
 Tutorials: 
-	- http://polycademy.com/blog/id/148/modern_wordpress_workflow_with_composer
-	- http://roots.io/using-composer-with-wordpress/
+ - http://polycademy.com/blog/id/148/modern_wordpress_workflow_with_composer
+ - http://roots.io/using-composer-with-wordpress/
+
 Wordpress plugin list:
-	- http://wpackagist.org/
-	- http://plugins.svn.wordpress.org/
+ - http://wpackagist.org/
+ - http://plugins.svn.wordpress.org/
