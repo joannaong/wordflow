@@ -1,7 +1,7 @@
-Wordpress workflow
-====================
+Wordpress + Jade workflow
+========================================
 
-Wordpress workflow using composer and grunt
+Wordpress + Jade workflow using composer and grunt
 
 
 
