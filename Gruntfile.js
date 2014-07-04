@@ -156,7 +156,6 @@ module.exports = function(grunt) {
 		},
 
 		// Jade compilation
-		// - Modify the scripts array to remove the src directory path
 		jade: {
 			cms: {
 				options: {

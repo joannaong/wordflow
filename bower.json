@@ -1,7 +1,0 @@
-{
-  "name": "proj-name",
-  "private": true,
-  "dependencies": {
-    "jquery": "~1.11.0"
-  }
-}
