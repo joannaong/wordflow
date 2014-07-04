@@ -53,8 +53,6 @@ define('JSON_DATAPATH', DOCROOT.'log/data_cms/');
 
 // PAGES
 define('PAGE_INDEX', 'index.html');
-define('PAGE_ABOUT', 'about.html');
-define('PAGE_SPONSOR', 'sponsor.html');
 define('PAGE_MEDIA', 'mediaArchivesTV.html');
 define('PAGE_PRIVACY', 'privacy.html');
 
