@@ -1,40 +1,68 @@
 <?php
-/**
- * The base configurations of the WordPress.
- *
- * This file has the following configurations: MySQL settings, Table Prefix,
- * Secret Keys, WordPress Language, and ABSPATH. You can find more information
- * by visiting {@link http://codex.wordpress.org/Editing_wp-config.php Editing
- * wp-config.php} Codex page. You can get the MySQL settings from your web host.
- *
- * This file is used by the wp-config.php creation script during the
- * installation. You don't have to use the web site, you can just copy this file
- * to "wp-config.php" and fill in the values.
- *
- * @package WordPress
+
+/*
+ * VARS configured for each environment
  */
+if(stristr( $_SERVER['SERVER_NAME'], "localhost")) {
+	// DB
+	define('DB_NAME', '*************');
+	define('DB_USER', '*************');
+	define('DB_PASSWORD', '*************');
+	define('DB_HOST', '*************');
 
-define('AWS_ACCESS_KEY_ID', '********************');
-define('AWS_SECRET_ACCESS_KEY', '**********************************');
+	// WP SITE - set this to be the wp base url
+	define('WP_HOME','http://localhost/proj-proj/deploy/local/wp');
+	define('WP_SITEURL','http://localhost/proj-proj/deploy/local/wp');
+	
+	// AMAZON AWS settings
+	// need to have amazon-web-services and amazon-s3-and-cloudfront plugin
+	// http://wordpress.org/plugins/amazon-s3-and-cloudfront/
+	define('AWS_ACCESS_KEY_ID', '*************');
+	define('AWS_SECRET_ACCESS_KEY', '*************');
 
-// ** MySQL settings - You can get this info from your web host ** //
-/** The name of the database for WordPress */
-define('DB_NAME', '*************');
+	// S3 bucket
+	define('PREVIEW_SITEURL', 'http://localhost/visi-cons/log/local/www/');
+	define('MAIN_SITEURL', 'http://cons.dev.thesecretlocation.net/');
 
-/** MySQL database username */
-define('DB_USER', '*************');
+	// SCRIPTS
+	define('DOCROOT', __DIR__.'/../../../');
+	define('PREVIEW_SCRIPT', 'sh '.DOCROOT.'bin/preview.local.sh');
+	define('PUBLISH_SCRIPT', 'sh '.DOCROOT.'bin/publish.local.sh');
 
-/** MySQL database password */
-define('DB_PASSWORD', '*************');
+} elseif(stristr( $_SERVER['SERVER_NAME'], "dev")) {
+	
+} elseif(stristr( $_SERVER['SERVER_NAME'], "stage")) {
+	
+} else {
+	
+}
 
-/** MySQL hostname */
-define('DB_HOST', 'localhost');
+/*
+ * Common VARS
+ */
+define('WP_DEBUG', false);
 
-/** Database Charset to use in creating database tables. */
+// DB
 define('DB_CHARSET', 'utf8');
-
-/** The Database Collate type. Don't change this if in doubt. */
 define('DB_COLLATE', '');
+
+// SCRIPTS
+define('LOCKFILE', DOCROOT.'log/lockfile');
+define('LOG_FILE', DOCROOT.'log/build.log');
+define('JSON_DATAPATH', DOCROOT.'log/data_cms/');
+
+// PAGES
+define('PAGE_INDEX', 'index.html');
+define('PAGE_ABOUT', 'about.html');
+define('PAGE_SPONSOR', 'sponsor.html');
+define('PAGE_MEDIA', 'mediaArchivesTV.html');
+define('PAGE_PRIVACY', 'privacy.html');
+
+// Upload path
+define('UPLOADS','../../../../log/uploads/');
+if (!file_exists(UPLOADS)) {
+	@mkdir(UPLOADS);
+}
 
 /**#@+
  * Authentication Unique Keys and Salts.
