@@ -83,11 +83,12 @@ PROJECT/
 	|_ composer.lock     # lock file auto_produced when running 'composer install'
 	|_ Gruntfile.js      # Grunt tasks
 	|_ node_modules/     # list of npm dependencies used in Grunt (git ignored)
+	|_ bower_components/ # list of bower components (git ignored)
 	|_ package.json      # grunt packages
 	|_ README.md
 	|_ src/              # source code (themes and/or plugins)
 	|_ vendor/           # composer dependencies (git ignored)
-	|_ wp/               # wordpress (git ignored)
+	|_ wordpress_module/ # wordpress (git ignored)
 ```
 
 - Wordpress and all dependent plugins / themes are installed
