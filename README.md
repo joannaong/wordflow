@@ -61,10 +61,10 @@ define('AWS_ACCESS_KEY_ID', '*************');
 define('AWS_SECRET_ACCESS_KEY', '*************');
 ```
 
-run 'grunt' to build
+run 'grunt build:[your environment (local, dev, stage)]' to build
 
 ```bash
-grunt
+grunt build:local
 ```
 
 
@@ -81,7 +81,6 @@ PROJECT/
 	|_ composer.lock     # lock file auto_produced when running 'composer install'
 	|_ Gruntfile.js      # Grunt tasks
 	|_ node_modules/     # list of npm dependencies used in Grunt (git ignored)
-	|_ bower_components/ # list of bower components (git ignored)
 	|_ package.json      # grunt packages
 	|_ README.md
 	|_ src/              # source code (themes and/or plugins)
