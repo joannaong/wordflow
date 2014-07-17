@@ -12,8 +12,6 @@ module.exports = function(grunt) {
 				host: "localhost",
 				dest: "log/local/www/",
 				backendDest: "deploy/local/",
-				analytics_ID: "UA-51849019-1",
-				analytics_URL: "thesecretlocation.net",
 				s3_preview: "preview.proj.dev.thesecretlocation.net",
 				s3_final: "proj.dev.thesecretlocation.net",
 				s3_asset: "asset.proj.dev.thesecretlocation.net",

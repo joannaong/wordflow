@@ -80,8 +80,6 @@ define('SECURE_AUTH_SALT', 'put your unique phrase here');
 define('LOGGED_IN_SALT',   'put your unique phrase here');
 define('NONCE_SALT',       'put your unique phrase here');
 
-/**#@-*/
-
 /**
  * WordPress Database Table prefix.
  *
@@ -108,8 +106,6 @@ define('WPLANG', '');
  * in their development environments.
  */
 define('WP_DEBUG', false);
-
-/* That's all, stop editing! Happy blogging. */
 
 /** Absolute path to the WordPress directory. */
 if ( !defined('ABSPATH') )

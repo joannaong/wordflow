@@ -51,7 +51,7 @@ define('DB_USER', '*************');
 define('DB_PASSWORD', '*************');
 
 /** MySQL hostname */
-define('DB_HOST', 'localhost');
+define('DB_HOST', '*************');
 ```
 
 Setup your aws credentials (if applicable) src/wp-config.php
