@@ -1,7 +1,7 @@
-Wordpress + Jade workflow
+Wordpress workflow that generates a static site
 ========================================
 
-Wordpress + Jade workflow using composer and grunt
+This workflow uses wordpress as a CMS and generates a static site which can be pushed up to S3.
 
 
 
@@ -77,15 +77,20 @@ Structure
 
 ```
 PROJECT/
-	|_ composer.json     # list of php dependencies (composer packages)
-	|_ composer.lock     # lock file auto_produced when running 'composer install'
-	|_ Gruntfile.js      # Grunt tasks
-	|_ node_modules/     # list of npm dependencies used in Grunt (git ignored)
-	|_ package.json      # grunt packages
+	|_ composer.json       # list of php dependencies (composer packages)
+	|_ composer.lock       # lock file auto_produced when running 'composer install'
+	|_ Gruntfile.js        # Grunt tasks
+	|_ node_modules/       # list of npm dependencies used in Grunt (git ignored)
+	|_ package.json        # list of npm packages
 	|_ README.md
-	|_ src/              # source code (themes and/or plugins)
-	|_ vendor/           # composer dependencies (git ignored)
-	|_ wordpress_module/ # wordpress (git ignored)
+	|_ src/                # source code (themes and/or plugins)
+	|  |_cms/
+	|  |  |_plugins/
+	|  |  |_themes/
+	|  |  |_wp-congig.php
+	|  |_html/             # front-end files
+	|_ vendor/             # composer dependencies (git ignored)
+	|_ wordpress_module/   # wordpress (git ignored)
 ```
 
 - Wordpress and all dependent plugins / themes are installed
