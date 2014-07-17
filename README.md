@@ -23,22 +23,49 @@ curl http://npmjs.org/install.sh | sh
 
 
 
+Structure
+---------------------
+
+```
+PROJECT/
+	|- composer.json        # list of php dependencies (composer packages)
+	|- composer.lock        # lock file auto_produced when running 'composer install'
+	|- Gruntfile.js         # Grunt tasks
+	|- node_modules/        # list of npm dependencies used in Grunt (git ignored)
+	|- package.json         # list of npm packages
+	|- README.md
+	|- src/                 # source code (themes and/or plugins)
+	|  |- cms/
+	|  |  |- plugins/
+	|  |  |- themes/
+	|  |  `- wp-config.php
+	|  |- html/             # front-end files
+	|- vendor/              # composer dependencies (git ignored)
+	|- wordpress_module/    # wordpress (git ignored)
+```
+
+
+
+
+
 Usage
 ---------------------
 
-run 'composer install' in terminal to install php dependencies including wordpress
+### Install dependencies
+Run 'composer install' in terminal to install wordpress and all dependent plugins and themes. Configuration can be edited inside composer.json. Read here http://roots.io/using-composer-with-wordpress/ for more info on how it's set up.
 
 ```bash
 composer install
 ```
 
-run 'npm install' in terminal to install node_modules/
+Run 'npm install' in terminal to install node_modules/.
 
 ```bash
 npm install
 ```
 
-Setup your database table and fill in src/wp-config.php
+### Setup wordpress
+Setup your database table and fill in src/wp-config.php.
 
 ```php
 /** The name of the database for WordPress */
@@ -61,42 +88,17 @@ define('AWS_ACCESS_KEY_ID', '*************');
 define('AWS_SECRET_ACCESS_KEY', '*************');
 ```
 
-run 'grunt build:[your environment (local, dev, stage)]' to build
+### Build
+Run 'grunt build:[your environment (local, dev, stage)]' to build.
+- wordpress core will be copied over to deploy/[env]/wp
+- src/cms/wp-config.php will be copied over to deploy/[env]/wp/wp-config.php
+- src/cms/plugins will be copied over to deploy/[env]/wp/wp-content/plugins
 
 ```bash
 grunt build:local
 ```
 
 
-
-
-
-
-Structure
----------------------
-
-```
-PROJECT/
-	|_ composer.json       # list of php dependencies (composer packages)
-	|_ composer.lock       # lock file auto_produced when running 'composer install'
-	|_ Gruntfile.js        # Grunt tasks
-	|_ node_modules/       # list of npm dependencies used in Grunt (git ignored)
-	|_ package.json        # list of npm packages
-	|_ README.md
-	|_ src/                # source code (themes and/or plugins)
-	|  |_cms/
-	|  |  |_plugins/
-	|  |  |_themes/
-	|  |  |_wp-congig.php
-	|  |_html/             # front-end files
-	|_ vendor/             # composer dependencies (git ignored)
-	|_ wordpress_module/   # wordpress (git ignored)
-```
-
-- Wordpress and all dependent plugins / themes are installed
-- Wordpress is installed under the wp/ directory
-- src/wp-config.php is then copied over to wp/wp-config.php
-- src/plugins are copied over to wp/wp-content/plugins
 
 
 
