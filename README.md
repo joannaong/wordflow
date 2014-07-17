@@ -1,5 +1,6 @@
-Wordpress workflow that generates a static site
-========================================
+#Wordpress workflow 
+##that generates a static site
+
 
 This workflow uses wordpress as a CMS and generates a static site which can be pushed up to S3.
 
@@ -52,7 +53,7 @@ Usage
 ---------------------
 
 ### Install dependencies
-Run 'composer install' in terminal to install wordpress and all dependent plugins and themes. Configuration can be edited inside composer.json. Read here http://roots.io/using-composer-with-wordpress/ for more info on how it's set up.
+Run 'composer install' in terminal to install wordpress and all dependent plugins and themes. Configuration can be edited inside composer.json. Refer to http://roots.io/using-composer-with-wordpress/ for more info on how it's set up.
 
 ```bash
 composer install
@@ -64,7 +65,7 @@ Run 'npm install' in terminal to install node_modules/.
 npm install
 ```
 
-### Setup wordpress
+### Setup Wordpress
 Setup your database table and fill in src/wp-config.php.
 
 ```php
@@ -90,7 +91,7 @@ define('AWS_SECRET_ACCESS_KEY', '*************');
 
 ### Build
 Run 'grunt build:[your environment (local, dev, stage)]' to build.
-- wordpress core will be copied over to deploy/[env]/wp
+- Wordpress core will be copied over to deploy/[env]/wp
 - src/cms/wp-config.php will be copied over to deploy/[env]/wp/wp-config.php
 - src/cms/plugins will be copied over to deploy/[env]/wp/wp-content/plugins
 
