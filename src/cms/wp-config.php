@@ -1,30 +1,31 @@
 <?php
 
-/*
- * VARS configured for each environment
- */
+// -----------
+// VARS configured for each environment
+// -----------
 if(stristr( $_SERVER['SERVER_NAME'], "localhost")) {
-	// DB
+	//- DB settings
 	define('DB_NAME', 'base-wp');
 	define('DB_USER', 'base-wp');
 	define('DB_PASSWORD', '12345');
 	define('DB_HOST', 'localhost');
 
-	// WP SITE - set this to be the wp base url
+	//- WP SITE - set this to be the wp base url
 	define('WP_HOME','http://localhost/wordflow/deploy/local/wp');
 	define('WP_SITEURL','http://localhost/wordflow/deploy/local/wp');
 	
-	// AMAZON AWS settings
+	//- AMAZON AWS settings
 	// need to have amazon-web-services and amazon-s3-and-cloudfront plugin
 	// http://wordpress.org/plugins/amazon-s3-and-cloudfront/
 	define('AWS_ACCESS_KEY_ID', '*************');
 	define('AWS_SECRET_ACCESS_KEY', '*************');
 
-	// S3 bucket
+	//- Wordflow CUSTOM VARS
+	// Front-end Preview URL
 	define('PREVIEW_SITEURL', 'http://localhost/wordflow/log/local/www/');
-	define('MAIN_SITEURL', '');
+	// Front-end Final URL
+	define('MAIN_SITEURL', 'http://localhost/wordflow/log/local/www/');
 
-	// SCRIPTS
 	define('DOCROOT', __DIR__.'/../../../');
 	define('PREVIEW_SCRIPT', 'sh '.DOCROOT.'bin/preview.local.sh');
 	define('PUBLISH_SCRIPT', 'sh '.DOCROOT.'bin/publish.local.sh');
@@ -37,26 +38,29 @@ if(stristr( $_SERVER['SERVER_NAME'], "localhost")) {
 	
 }
 
-/*
- * Common VARS
- */
+// -----------
+// Common VARS
+// -----------
 define('WP_DEBUG', false);
 
-// DB
+//- DB, additional options
 define('DB_CHARSET', 'utf8');
 define('DB_COLLATE', '');
 
-// SCRIPTS
+//- Wordflow CUSTOM VARS
+// used in plugins/wordflow/ to generate the JSON file for front-end to read
 define('LOCKFILE', DOCROOT.'log/lockfile');
 define('LOG_FILE', DOCROOT.'log/build.log');
 define('JSON_DATAPATH', DOCROOT.'log/data_cms/');
 
-// PAGES
+//- PAGES 
+// used in plugins/wordflow/
 define('PAGE_INDEX', 'index.html');
 define('PAGE_MEDIA', 'mediaArchivesTV.html');
 define('PAGE_PRIVACY', 'privacy.html');
 
-// Upload path
+//- Upload path
+// specifically set because SL test, SL stage and SL prod env only has log writable
 define('UPLOADS','../../../../log/uploads/');
 if (!file_exists(UPLOADS)) {
 	@mkdir(UPLOADS);

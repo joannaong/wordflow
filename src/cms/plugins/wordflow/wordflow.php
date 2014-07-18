@@ -1,8 +1,8 @@
 <?php
 
 /*
- * Plugin Name: Project Name
- * Description: Custom functionality for [project name]. [year].
+ * Plugin Name: Wordflow
+ * Description: Custom functionality for Wordflow. 2014
  * Version: 0.1
  * Author: Secret Location
  * Author URI: http://thesecretlocation.com
@@ -24,8 +24,8 @@
 add_action('admin_menu', 'remove_sidebar_dashboard');
 
 // Extend json api
-add_filter('json_api_controllers', 'add_custom_controller');
-add_filter('json_api_custom_controller_path', 'set_custom_controller_path');
+add_filter('json_api_controllers', 'add_wordflow_controller');
+add_filter('json_api_wordflow_controller_path', 'set_wordflow_controller_path');
 
 // add js
 add_action('init','add_script');
@@ -45,16 +45,16 @@ add_action('admin_footer', 'global_vars');
 // -----------
 
 function add_script() {
-	wp_enqueue_script('visicons-js', plugins_url('/js/visicons.js', __FILE__));
-	wp_enqueue_style('visicons-css', plugins_url('/css/visicons.css', __FILE__));
+	wp_enqueue_script('wordflow-js', plugins_url('/js/wordflow.js', __FILE__));
+	wp_enqueue_style('wordflow-css', plugins_url('/css/wordflow.css', __FILE__));
 }
 
-function add_custom_controller($controllers) {
-  $controllers[] = 'custom';
+function add_wordflow_controller($controllers) {
+  $controllers[] = 'wordflow';
   return $controllers;
 }
 
-function set_custom_controller_path() {
+function set_wordflow_controller_path() {
   return plugin_dir_path( __FILE__ )."json-api-extend.php";
 }
 

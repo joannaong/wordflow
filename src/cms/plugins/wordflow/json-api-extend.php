@@ -1,12 +1,12 @@
 <?php
 
 /*
- * Controller name: Custom
- * Controller description: Custom json calls for Conspiracy Show.
+ * Controller name: Wordflow
+ * Controller description: Custom json calls for Wordflow.
  *
  * Note:
  *  - This class is an extention from the JSON API plugin for wordpress.
- *  - To activate, go to WP Dashboard > Settings > JSON API and activate 'custom'.
+ *  - To activate, go to WP Dashboard > Settings > JSON API and activate 'wordflow'.
  *  - Plugin link: http://wordpress.org/plugins/json-api
  *  - Documentation: http://wordpress.org/plugins/json-api/other_notes/
  *  - my custom functions auto writes to a json file when called upon
@@ -23,12 +23,12 @@
  *   }
  *
  * CALLS:
- *  - http://localhost/visi-cons/deploy/local/wp/?json=custom.[function name]
- *  - i.e. http://localhost/visi-cons/deploy/local/wp/?json=custom.get_menu
+ *  - http://localhost/visi-cons/deploy/local/wp/?json=wordflow.[function name]
+ *  - i.e. http://localhost/visi-cons/deploy/local/wp/?json=wordflow.get_menu
  *
  */
 
-class JSON_API_Custom_Controller {
+class JSON_API_Wordflow_Controller {
 
 	// Menu which calls upon wp function wp_get_nav_menu_items
 	public function get_menu() {
@@ -64,10 +64,10 @@ class JSON_API_Custom_Controller {
 	}
 
 	// PAGE with custom fields
-	public function get_privacy_page() {
+	public function get_sample_page() {
 		$array = array();
 		$args = array(
-			'name' => 'privacy-policy',
+			'name' => 'sample-page',
 			'post_type' => 'page'
 		);
 		$loop = new WP_Query($args);
@@ -75,69 +75,17 @@ class JSON_API_Custom_Controller {
 		while ($loop->have_posts()) : $loop->the_post();
 			$array['privacy']['post_id'] = get_the_id();
 			$array['privacy']['wp_title'] = get_the_title();
-			$array['privacy']['title_bolded'] = get_field('title_bolded');
-			$array['privacy']['title_normal'] = get_field('title_normal');
-			$array['privacy']['show_title'] = get_field('show_title');
+			$array['privacy']['air_time'] = get_field('airtime');
 			$array['privacy']['copy'] = get_the_content();
 		endwhile;
 
 		// write it yo
 		@mkdir(JSON_DATAPATH, 0777, true);
 		$u = umask(0777);
-		$fp = fopen(JSON_DATAPATH.'privacy_data.json', 'w+');
+		$fp = fopen(JSON_DATAPATH.'sample.json', 'w+');
 		fwrite($fp, json_encode($array));
 		fclose($fp);
-		@chmod(JSON_DATAPATH.'privacy.json',0777);
-
-		return $array;
-	}
-
-	// Custom Post Type with custom fields
-	public function get_media_page() {
-		$array = array();
-
-		// past_episodes
-		$cat_args = array(
-		  'order' => 'ASC',
-		  'taxonomy'=> 'season_number',
-		  'type' => 'past_episode'
-   	);
-		$categories = get_categories($cat_args);
-		
-		$counter = 0;
-		foreach($categories as $category) { 
-	    $args = array(
-	      'posts_per_page' => -1,
-	      'season_number' => $category->slug,
-	      'post_type' => 'past_episode'
-	    );
-	    $loop = new WP_Query($args);
-    	$counter2 = 0;
-
-    	$array['past_episode'][$counter]['key'] = $category->slug;
-    	$array['past_episode'][$counter]['season'] = $category->name;
-
-    	while ($loop->have_posts()) : $loop->the_post();
-    		$array['past_episode'][$counter]['data'][$counter2]['post_id'] = get_the_id();
-	    	$array['past_episode'][$counter]['data'][$counter2]['wp_title'] = get_the_title();
-	    	$array['past_episode'][$counter]['data'][$counter2]['ep_title'] = get_field('episode_title');
-	    	$array['past_episode'][$counter]['data'][$counter2]['ep_thumbnail'] = get_field('episode_thumbnail');
-	    	$array['past_episode'][$counter]['data'][$counter2]['ep_synopsis'] = htmlentities(get_field('episode_synopsis'));
-	    	$array['past_episode'][$counter]['data'][$counter2]['ep_link'] = get_field('episode_link');
-
-	    	$counter2++;
-	    endwhile;
-
-		  $counter++;
-    }
-
-		// write it yo
-		@mkdir(JSON_DATAPATH, 0777, true);
-		$u = umask(0777);
-		$fp = fopen(JSON_DATAPATH.'media.json', 'w+');
-		fwrite($fp, json_encode($array));
-		fclose($fp);
-		@chmod(JSON_DATAPATH.'media.json',0777);
+		@chmod(JSON_DATAPATH.'sample.json',0777);
 
 		return $array;
 	}

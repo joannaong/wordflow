@@ -83,6 +83,12 @@ define('DB_PASSWORD', '*************');
 define('DB_HOST', '*************');
 ```
 
+Set up path where Wordpress will be hosted
+```php
+define('WP_HOME','http://localhost/wordflow/deploy/local/wp');
+define('WP_SITEURL','http://localhost/wordflow/deploy/local/wp');
+```
+
 Setup your aws credentials (if applicable) src/wp-config.php
 
 ```php
@@ -100,8 +106,16 @@ Run 'grunt build:[your environment (local, dev, stage)]' to build.
 grunt build:local
 ```
 
+### Activate Plugins
+- Go to the deploy folder where Wordpress is copied over, ie. http://localhost/wordflow/deploy/local/wp/wp-admin and activate all plugins by going to 'Plugins' on the side dashboard.
+- Go to 'Settings' > 'JSON API' and activate wordflow
 
 
+
+
+
+Custom Fields
+---------------------
 
 
 

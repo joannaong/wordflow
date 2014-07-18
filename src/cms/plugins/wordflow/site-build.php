@@ -96,10 +96,10 @@ class Site_Build {
 
 	  echo '
 	  	<h4>Preview your changes</h4>
-	  	<a data-postid="'.$post_id.'" data-siteurl="'.site_url().'" data-getfunction="'.$get_function.'" id="single-page-preview" class="button button-primary visi-build" href="post.php?post='.$post_id.'&action=edit&vpreview=true&redirect='.$page_url.'">Preview</a>
+	  	<a data-postid="'.$post_id.'" data-siteurl="'.site_url().'" data-getfunction="'.$get_function.'" id="single-page-preview" class="button button-primary wordflow-build" href="post.php?post='.$post_id.'&action=edit&vpreview=true&redirect='.$page_url.'">Preview</a>
 
-	  	<br><br><hr><h4>Publish</h4><p>Click below to push the site live to http://theconspiracyshow.com. Please make sure your changes have been previewed and double-checked.</p>
-	  	<a data-postid="'.$post_id.'" data-siteurl="'.site_url().'" data-getfunction="'.$get_function.'" class="button button-primary visi-build" id="single-page-build" href="post.php?post='.$post_id.'&action=edit&vpublish=true&redirect='.$page_url.'">Publish Live</a>';
+	  	<br><br><hr><h4>Publish</h4><p>Click below to push the site live. Please make sure your changes have been previewed and double-checked.</p>
+	  	<a data-postid="'.$post_id.'" data-siteurl="'.site_url().'" data-getfunction="'.$get_function.'" class="button button-primary wordflow-build" id="single-page-build" href="post.php?post='.$post_id.'&action=edit&vpublish=true&redirect='.$page_url.'">Publish Live</a>';
 	}
 
 	
@@ -122,10 +122,10 @@ class Site_Build {
 				<div class="postbox">
 					<div class="inside">
 						<h3>Preview Site</h3>
-						<a data-siteurl="'.site_url().'" href="admin.php?page=publish_site&vpreview=true" class="visi-build-all button button-primary">Preview Site</a>
+						<a data-siteurl="'.site_url().'" href="admin.php?page=publish_site&vpreview=true" class="wordflow-build-all button button-primary">Preview Site</a>
 						<h3><br>Publish Site</h3>
-						<p>Click below to push the site live to http://theconspiracyshow.com. Please make sure your changes have been previewed and double-checked.</p>
-						<a data-siteurl="'.site_url().'" href="admin.php?page=publish_site&vpublish=true" class="visi-build-all button button-primary">Publish Site</a>
+						<p>Click below to push the site live. Please make sure your changes have been previewed and double-checked.</p>
+						<a data-siteurl="'.site_url().'" href="admin.php?page=publish_site&vpublish=true" class="wordflow-build-all button button-primary">Publish Site</a>
 					</div>
 				</div>
 			</div>';
