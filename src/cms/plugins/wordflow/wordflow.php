@@ -4,8 +4,8 @@
  * Plugin Name: Wordflow
  * Description: Custom functionality for Wordflow. 2014
  * Version: 0.1
- * Author: Secret Location
- * Author URI: http://thesecretlocation.com
+ * Author: Joanna Ong
+ * Author URI: http://joannaong.ca
  *
  */
 
@@ -13,7 +13,7 @@
 // INCLUDES
 // -----------
 
-// Adding custom post types
+// Uncomment if you need to add custom post types
 // @include_once plugin_dir_path( __FILE__ )."custom-post-type.php";
 @include_once plugin_dir_path( __FILE__ )."site-build.php";
 
