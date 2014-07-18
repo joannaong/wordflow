@@ -96,6 +96,10 @@ define('AWS_ACCESS_KEY_ID', '*************');
 define('AWS_SECRET_ACCESS_KEY', '*************');
 ```
 
+### Activate Plugins
+- Go to the deploy folder where Wordpress is copied over, ie. http://localhost/wordflow/deploy/local/wp/wp-admin and activate all plugins by going to 'Plugins' on the side dashboard.
+- Go to 'Settings' > 'JSON API' and activate wordflow
+
 ### Build
 Run 'grunt build:[your environment (local, dev, stage)]' to build.
 - Wordpress core will be copied over to deploy/[env]/wp
@@ -105,12 +109,6 @@ Run 'grunt build:[your environment (local, dev, stage)]' to build.
 ```bash
 grunt build:local
 ```
-
-### Activate Plugins
-- Go to the deploy folder where Wordpress is copied over, ie. http://localhost/wordflow/deploy/local/wp/wp-admin and activate all plugins by going to 'Plugins' on the side dashboard.
-- Go to 'Settings' > 'JSON API' and activate wordflow
-
-
 
 
 
