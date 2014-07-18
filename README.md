@@ -67,7 +67,9 @@ npm install
 ```
 
 ### Setup Wordpress
-Setup your database table and fill in src/cms/wp-config.php.
+Setup your database table, database passoword and user. If you're using MAMP, its usually located at http://localhost/phpmyadmin.
+
+Fill in src/cms/wp-config.php with the credentials you used for the database.
 
 ```php
 /** The name of the database for WordPress */
