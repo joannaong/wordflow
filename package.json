@@ -1,6 +1,6 @@
 {
-  "name": "base-wp",
-  "description" : "by team tourbus",
+  "name": "wordflow",
+  "description" : "wordpress workflow that generates a static site",
   "version": "0.1.0",
   "devDependencies": {
     "grunt": "~0.4.2",

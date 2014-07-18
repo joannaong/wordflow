@@ -11,8 +11,8 @@ if(stristr( $_SERVER['SERVER_NAME'], "localhost")) {
 	define('DB_HOST', 'localhost');
 
 	// WP SITE - set this to be the wp base url
-	define('WP_HOME','http://localhost/base-wp/deploy/local/wp');
-	define('WP_SITEURL','http://localhost/base-wp/deploy/local/wp');
+	define('WP_HOME','http://localhost/wordflow/deploy/local/wp');
+	define('WP_SITEURL','http://localhost/wordflow/deploy/local/wp');
 	
 	// AMAZON AWS settings
 	// need to have amazon-web-services and amazon-s3-and-cloudfront plugin
@@ -21,7 +21,7 @@ if(stristr( $_SERVER['SERVER_NAME'], "localhost")) {
 	define('AWS_SECRET_ACCESS_KEY', '*************');
 
 	// S3 bucket
-	define('PREVIEW_SITEURL', 'http://localhost/base-wp/log/local/www/');
+	define('PREVIEW_SITEURL', 'http://localhost/wordflow/log/local/www/');
 	define('MAIN_SITEURL', '');
 
 	// SCRIPTS

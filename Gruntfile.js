@@ -12,9 +12,9 @@ module.exports = function(grunt) {
 				host: "localhost",
 				dest: "log/local/www/",
 				backendDest: "deploy/local/",
-				s3_preview: "preview.proj.dev.thesecretlocation.net",
-				s3_final: "proj.dev.thesecretlocation.net",
-				s3_asset: "asset.proj.dev.thesecretlocation.net",
+				s3_preview: "preview.wordflow.dev.thesecretlocation.net",
+				s3_final: "wordflow.dev.thesecretlocation.net",
+				s3_asset: "asset.wordflow.dev.thesecretlocation.net",
 				aws_accessKeyId: '***',
 		    aws_secretAccessKey: '***'
 			}
