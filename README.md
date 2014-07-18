@@ -119,8 +119,7 @@ Plugins
 ###JSON API
 - JSON API https://wordpress.org/plugins/json-api/ has been included in composer.json to install. This plugin generates a JSON file from WP pages or posts.
 - You can edit custom functions inside cms/plugins/wordflow/json.php.
-- To access the file, go to http://localhost/wordflow/deploy/local/wp/?json=wordflow.[function_name]. ie.
-http://localhost/wordflow/deploy/local/wp/?json=wordflow.get_menu
+- To access the file, go to http://localhost/wordflow/deploy/local/wp/?json=wordflow.[function_name]. for example, http://localhost/wordflow/deploy/local/wp/?json=wordflow.get_menu
 
 ###Advanced Custom Fields
 - http://www.advancedcustomfields.com/
