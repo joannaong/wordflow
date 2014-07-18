@@ -67,7 +67,7 @@ npm install
 ```
 
 ### Setup Wordpress
-Setup your database table and fill in src/wp-config.php.
+Setup your database table and fill in src/cms/wp-config.php.
 
 ```php
 /** The name of the database for WordPress */
@@ -89,7 +89,7 @@ define('WP_HOME','http://localhost/wordflow/deploy/local/wp');
 define('WP_SITEURL','http://localhost/wordflow/deploy/local/wp');
 ```
 
-Setup your aws credentials (if applicable) src/wp-config.php
+Setup your aws credentials (if applicable)
 
 ```php
 define('AWS_ACCESS_KEY_ID', '*************');
@@ -114,8 +114,10 @@ grunt build:local
 
 
 
-Custom Fields
+Plugins
 ---------------------
+##JSON API
+##Custom Fields
 
 
 

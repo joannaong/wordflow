@@ -13,7 +13,8 @@
 // INCLUDES
 // -----------
 
-@include_once plugin_dir_path( __FILE__ )."custom-post-type.php";
+// Adding custom post types
+// @include_once plugin_dir_path( __FILE__ )."custom-post-type.php";
 @include_once plugin_dir_path( __FILE__ )."site-build.php";
 
 // -----------
