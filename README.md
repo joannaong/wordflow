@@ -1,7 +1,6 @@
 Wordflow
 ========================================
-Wordpress workflow that generates a static site
-
+Wordpress workflow that generates a static site. 
 
 This workflow uses wordpress as a CMS and generates a static site which can be pushed up to S3.
 
