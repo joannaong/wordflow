@@ -55,7 +55,7 @@ function add_wordflow_controller($controllers) {
 }
 
 function set_wordflow_controller_path() {
-  return plugin_dir_path( __FILE__ )."json-api-extend.php";
+  return plugin_dir_path( __FILE__ )."json.php";
 }
 
 function remove_sidebar_dashboard() {

@@ -7,7 +7,7 @@ set -x
 echo Building Local Site
 
 #New Build
-grunt preview:local:data --force
+grunt preview:local --force
 
 echo Done
 ) 2>&1

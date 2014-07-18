@@ -130,3 +130,12 @@ Tutorials:
 Wordpress plugin list:
  - http://wpackagist.org/
  - http://plugins.svn.wordpress.org/
+
+
+Notes
+---------------------
+MAMP is weird. If you're getting an error when hitting .sh script, fix mamp by opening /Applications/MAMP/Library/bin/envvars and comment out
+```php
+# DYLD_LIBRARY_PATH="/Applications/MAMP/Library/lib:$DYLD_LIBRARY_PATH"
+# export DYLD_LIBRARY_PATH
+```

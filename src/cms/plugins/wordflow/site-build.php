@@ -69,31 +69,12 @@ class Site_Build {
 		$post_name = $post->post_name;
 		$post_type = $post->post_type;
 
-		// about
-		if ($post_name == "about-the-show") {
-			$page_url = PAGE_ABOUT;
-			$get_function = "about_page";
+		// sample page
+		if ($post_name == "sample") {
+			$page_url = PAGE_SAMPLE;
+			$get_function = "sample_page";
 		}
-		// sponsor
-		if ($post_name == "sponsors-contributors") {
-			$page_url = PAGE_SPONSOR;
-			$get_function = "sponsor_page";
-		}
-		// privy
-		if ($post_name == "privacy-policy") {
-			$page_url = PAGE_PRIVACY;
-			$get_function = "privacy_page";
-		}
-		// media-archive
-		if ($post_type == "podcast" || $post_type == "past_episode") {
-			$page_url = PAGE_MEDIA;
-			$get_function = "media_page";
-		}
-		if ($post_type == "current_episode") {
-			$page_url = PAGE_INDEX;
-			$get_function = "current_episode";
-		}
-
+		
 	  echo '
 	  	<h4>Preview your changes</h4>
 	  	<a data-postid="'.$post_id.'" data-siteurl="'.site_url().'" data-getfunction="'.$get_function.'" id="single-page-preview" class="button button-primary wordflow-build" href="post.php?post='.$post_id.'&action=edit&vpreview=true&redirect='.$page_url.'">Preview</a>
@@ -178,6 +159,8 @@ class Site_Build {
 
 			$json['output'][$i] = 'Published Site generated, redirecting to Published Site URL.';
 			$json['status'] = true;
+
+			// print_r($output);
 			echo "<div class='updated'><p><b>SUCCESS!</b></p><p> ".$call." link: <a target='_blank' href='".$redirect."'>".$redirect."</a></p></div>";
 
 		}else{

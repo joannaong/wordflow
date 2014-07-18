@@ -7,7 +7,7 @@ set -x
 echo Publish Local Site
 
 #New Build
-grunt publish:local:data --force
+grunt publish:local --force
 
 echo Done
 ) 2>&1

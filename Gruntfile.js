@@ -32,8 +32,7 @@ module.exports = function(grunt) {
 
 		// CMS data
 		CMS_navData: grunt.file.exists('log/data_cms/nav.json') ? grunt.file.readJSON('log/data_cms/nav.json') : grunt.file.readJSON('src/html/data/nav.json'),
-		CMS_mediaArchivesData: grunt.file.exists('log/data_cms/media.json') ? grunt.file.readJSON('log/data_cms/media.json') : grunt.file.readJSON('src/html/data/media.json'),
-		CMS_privacyData: grunt.file.exists('log/data_cms/privacy.json') ? grunt.file.readJSON('log/data_cms/privacy.json') : grunt.file.readJSON('src/html/data/privacy.json'),
+		CMS_sampleData: grunt.file.exists('log/data_cms/sample.json') ? grunt.file.readJSON('log/data_cms/sample.json') : grunt.file.readJSON('src/html/data/sample.json'),
 
     aws_s3: {
 		  options: {
@@ -157,18 +156,17 @@ module.exports = function(grunt) {
 		jade: {
 			cms: {
 				options: {
-					sourceMap: true,
 					pretty: false,
 					data: {
 						environment: "<%= environment %>",
 						srcDir: "src/html/",
 						navData: "<%= CMS_navData %>",
-						mediaArchivesData: "<%= CMS_mediaArchivesData %>",
-						privacyData: "<%= CMS_privacyData %>",
+						sampleData: "<%= CMS_sampleData %>",
 					}
 				},
 				files: {
-					"<%= environment.dest %>index.html" : "src/html/jade/index.jade"
+					'<%= environment.dest %>index.html': 'src/html/jade/pages/index.jade',
+					'<%= environment.dest %>sample.html': 'src/html/jade/pages/sample.jade'
 				}
 			}
 		}
