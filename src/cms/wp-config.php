@@ -5,14 +5,14 @@
  */
 if(stristr( $_SERVER['SERVER_NAME'], "localhost")) {
 	// DB
-	define('DB_NAME', '*************');
-	define('DB_USER', '*************');
-	define('DB_PASSWORD', '*************');
-	define('DB_HOST', '*************');
+	define('DB_NAME', 'base-wp');
+	define('DB_USER', 'base-wp');
+	define('DB_PASSWORD', '12345');
+	define('DB_HOST', 'localhost');
 
 	// WP SITE - set this to be the wp base url
-	define('WP_HOME','http://localhost/proj-proj/deploy/local/wp');
-	define('WP_SITEURL','http://localhost/proj-proj/deploy/local/wp');
+	define('WP_HOME','http://localhost/base-wp/deploy/local/wp');
+	define('WP_SITEURL','http://localhost/base-wp/deploy/local/wp');
 	
 	// AMAZON AWS settings
 	// need to have amazon-web-services and amazon-s3-and-cloudfront plugin
@@ -21,8 +21,8 @@ if(stristr( $_SERVER['SERVER_NAME'], "localhost")) {
 	define('AWS_SECRET_ACCESS_KEY', '*************');
 
 	// S3 bucket
-	define('PREVIEW_SITEURL', 'http://localhost/visi-cons/log/local/www/');
-	define('MAIN_SITEURL', 'http://cons.dev.thesecretlocation.net/');
+	define('PREVIEW_SITEURL', 'http://localhost/base-wp/log/local/www/');
+	define('MAIN_SITEURL', '');
 
 	// SCRIPTS
 	define('DOCROOT', __DIR__.'/../../../');

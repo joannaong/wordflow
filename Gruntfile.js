@@ -7,7 +7,7 @@ module.exports = function(grunt) {
 		local: {
 			options: {
 			variables: {
-			environment:{
+			environment: {
 				id: "local",
 				host: "localhost",
 				dest: "log/local/www/",
