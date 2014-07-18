@@ -1,0 +1,17 @@
+extends ../base
+
+block setup
+	- page = 'index';
+	- jsClass = 'Home';
+
+body(data-js-class=jsClass)
+	block content
+		.menu
+			ul.menu-main
+				each menu in navData.menu
+					- var target = (menu.target == "") ? "_self" : menu.target
+					li(id="mainMenu-#{menu.classes}")
+						a(href="#{menu.url}", target=target)
+							span!= menu.title
+							br
+							span!= menu.description
