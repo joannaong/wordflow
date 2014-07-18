@@ -5,8 +5,8 @@
 // -----------
 if(stristr( $_SERVER['SERVER_NAME'], "localhost")) {
 	//- DB settings
-	define('DB_NAME', 'base-wp');
-	define('DB_USER', 'base-wp');
+	define('DB_NAME', 'wordflow');
+	define('DB_USER', 'wordflow');
 	define('DB_PASSWORD', '12345');
 	define('DB_HOST', 'localhost');
 
@@ -17,8 +17,8 @@ if(stristr( $_SERVER['SERVER_NAME'], "localhost")) {
 	//- AMAZON AWS settings
 	// need to have amazon-web-services and amazon-s3-and-cloudfront plugin
 	// http://wordpress.org/plugins/amazon-s3-and-cloudfront/
-	define('AWS_ACCESS_KEY_ID', '*************');
-	define('AWS_SECRET_ACCESS_KEY', '*************');
+	define('AWS_ACCESS_KEY_ID', '****');
+	define('AWS_SECRET_ACCESS_KEY', '****');
 
 	//- Wordflow CUSTOM VARS
 	// Front-end Preview URL

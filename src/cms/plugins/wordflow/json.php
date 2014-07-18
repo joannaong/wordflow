@@ -75,8 +75,8 @@ class JSON_API_Wordflow_Controller {
 		while ($loop->have_posts()) : $loop->the_post();
 			$array['sample']['post_id'] = get_the_id();
 			$array['sample']['wp_title'] = get_the_title();
-			$array['sample']['air_time'] = get_field('airtime');
 			$array['sample']['copy'] = get_the_content();
+			$array['sample']['hi'] = get_field('hi');
 		endwhile;
 
 		// write it yo

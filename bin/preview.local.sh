@@ -4,10 +4,10 @@ export LANG=en_US.UTF-8
 
 set -x
 (
-echo Building Local Site
+echo Preview Local Site
 
 #New Build
-grunt preview:local --force
+grunt preview:local
 
 echo Done
 ) 2>&1
