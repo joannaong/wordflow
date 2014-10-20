@@ -60,8 +60,8 @@ function set_wordflow_controller_path() {
 }
 
 function remove_sidebar_dashboard() {
-  remove_menu_page('edit-comments.php');
-  remove_menu_page('edit.php');         
+  // remove_menu_page('edit-comments.php');
+  // remove_menu_page('edit.php');         
 }
 
 function posttype_admin_css() {
