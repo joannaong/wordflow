@@ -32,7 +32,7 @@
 		"php": ">=5.3.0",
 		"wordpress": "4.0.0",
 		"wpackagist-plugin/json-api":"1.1.1",
-		"wpackagist-plugin/advanced-custom-fields": "4.3.8",
+		"wpackagist-plugin/advanced-custom-fields": "4.3.9",
 		"wpackagist-plugin/amazon-s3-and-cloudfront": "0.6.1",
 		"wpackagist-plugin/amazon-web-services": "0.1"
 	},

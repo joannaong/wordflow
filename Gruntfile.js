@@ -169,9 +169,22 @@ module.exports = function(grunt) {
 					'<%= environment.dest %>sample.html': 'src/html/jade/pages/sample.jade'
 				}
 			}
+		},
+
+		// Watch files and update only changed content
+		watch: {
+			cms: {
+				files: ['src/cms/**/**','src/cms/wp-config.php'],
+				tasks: ['config:local', 'copy:cms']
+			}
 		}
 	});
-
+	
+	grunt.registerTask('default', [
+		'config:local',
+		'copy:cms',
+		'watch'
+	]);
 
 	// Compile build for the different deployment environments
 	grunt.registerTask('build', function(_environment) {
@@ -237,7 +250,6 @@ module.exports = function(grunt) {
 			'config:'+_environment,
 			'clean:dist',
 			'copy:assets',
-			'copy:php',
 			'copy:wordpress_module',
 			'clean:cms',
 			'copy:cms',
