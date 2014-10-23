@@ -116,6 +116,9 @@ Run 'grunt' while developing themes and plugins inside src/cms
 - src/cms/wp-config.php will be copied over to deploy/[env]/wp/wp-config.php
 - src/cms/plugins will be copied over to deploy/[env]/wp/wp-content/plugins
 
+```bash
+grunt
+```
 
 Plugins
 ---------------------
