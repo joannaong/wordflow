@@ -11,8 +11,8 @@ if(stristr( $_SERVER['SERVER_NAME'], "localhost")) {
 	define('DB_HOST', 'localhost');
 
 	//- WP SITE - set this to be the wp base url
-	define('WP_HOME','http://localhost/wordflow/deploy/local/wp');
-	define('WP_SITEURL','http://localhost/wordflow/deploy/local/wp');
+	define('WP_HOME','http://localhost/wordflow/dist/');
+	define('WP_SITEURL','http://localhost/wordflow/dist/');
 	
 	//- AMAZON AWS settings
 	// need to have amazon-web-services and amazon-s3-and-cloudfront plugin

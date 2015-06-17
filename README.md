@@ -31,8 +31,8 @@ Structure
 PROJECT/
 	|- composer.json        # list of php dependencies (composer packages)
 	|- composer.lock        # lock file auto_produced when running 'composer install'
-	|- Gruntfile.js         # Grunt tasks
-	|- node_modules/        # list of npm dependencies used in Grunt (git ignored)
+	|- gulpfile.js         # gulp tasks
+	|- node_modules/        # list of npm dependencies used in gulp (git ignored)
 	|- package.json         # list of npm packages
 	|- README.md
 	|- src/                 # source code (themes and/or plugins)
@@ -86,8 +86,8 @@ define('DB_HOST', '*************');
 
 Set up path where Wordpress will be hosted
 ```php
-define('WP_HOME','http://localhost/wordflow/deploy/local/wp');
-define('WP_SITEURL','http://localhost/wordflow/deploy/local/wp');
+define('WP_HOME','http://localhost/wordflow/dist');
+define('WP_SITEURL','http://localhost/wordflow/dist');
 ```
 
 Setup your aws credentials (if applicable)
@@ -98,26 +98,26 @@ define('AWS_SECRET_ACCESS_KEY', '*************');
 ```
 
 ### Activate Plugins
-- Go to the deploy folder where Wordpress is copied over, ie. http://localhost/wordflow/deploy/local/wp/wp-admin and activate all plugins by going to 'Plugins' on the side dashboard.
+- Go to the dist folder where Wordpress is copied over, ie. http://localhost/wordflow/dist/wp-admin and activate all plugins by going to 'Plugins' on the side dashboard.
 - Go to 'Settings' > 'JSON API' and activate wordflow
 
 ### Build
-Run 'grunt build:[your environment (local, dev, stage)]' to build.
-- Wordpress core will be copied over to deploy/[env]/wp
-- src/cms/wp-config.php will be copied over to deploy/[env]/wp/wp-config.php
-- src/cms/plugins will be copied over to deploy/[env]/wp/wp-content/plugins
+Run 'gulp' to build.
+- Wordpress core will be copied over to dist/[env]/
+- src/cms/wp-config.php will be copied over to dist/[env]/wp-config.php
+- src/cms/plugins will be copied over to dist/[env]/wp-content/plugins
 
 ```bash
-grunt build:local
+gulp
 ```
 
 ### Watch
-Run 'grunt' while developing themes and plugins inside src/cms
-- src/cms/wp-config.php will be copied over to deploy/[env]/wp/wp-config.php
-- src/cms/plugins will be copied over to deploy/[env]/wp/wp-content/plugins
+Run 'gulp' while developing themes and plugins inside src/cms
+- src/cms/wp-config.php will be copied over to dist/[env]/wp-config.php
+- src/cms/plugins will be copied over to dist/[env]/wp-content/plugins
 
 ```bash
-grunt
+gulp
 ```
 
 Plugins
@@ -125,7 +125,7 @@ Plugins
 ###JSON API
 - JSON API https://wordpress.org/plugins/json-api/ has been included in composer.json to install. This plugin generates a JSON file from WP pages or posts.
 - You can edit custom functions inside cms/plugins/wordflow/json.php.
-- To access the file, go to http://localhost/wordflow/deploy/local/wp/?json=wordflow.[function_name]. for example, http://localhost/wordflow/deploy/local/wp/?json=wordflow.get_menu
+- To access the file, go to http://localhost/wordflow/dist/?json=wordflow.[function_name]. for example, http://localhost/wordflow/dist/?json=wordflow.get_menu
 
 ###Advanced Custom Fields
 - http://www.advancedcustomfields.com/

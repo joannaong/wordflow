@@ -6,6 +6,7 @@
 /deploy
 /node_modules
 /log/*
+dist/
 
 # CMS
 /vendor
