@@ -7,7 +7,7 @@
     "type": "git",
     "url": "git@bitbucket.org:happytime/happytime-cms.git"
   },
-  "author": "Joanna Ong <ongjfu@gmail.com>",
+  "author": "Joanna Ong",
   "license": "MIT",
   "devDependencies": {
     "gulp": "^3.9.0",
